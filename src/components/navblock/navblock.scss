@@ -1,0 +1,34 @@
+.category {
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 5px;
+}
+
+.subcategory {
+  font-size: 1.5rem;
+}
+
+.subcategory:hover + .elementList,
+.elementList:hover {
+  display: block;
+}
+
+.elementList {
+  // display: none;
+  margin-left: 5px;
+
+  .elementLink {
+    font-size: 1.5rem;
+    padding: 5px 0;
+    display: block;
+  }
+
+  .elementLink:hover {
+    text-decoration: underline;
+  }
+}
+
+.navblock {
+  margin-bottom: 20px;
+}
