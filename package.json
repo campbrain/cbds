@@ -24,7 +24,8 @@
     "react-bootstrap": "^1.0.0-beta.9",
     "react-codepen-embed": "^1.0.1",
     "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "smooth-scroll": "^16.1.0"
   },
   "devDependencies": {
     "prettier": "^1.18.2"

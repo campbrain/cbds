@@ -4,7 +4,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const ElementPage = path.resolve("./src/templates/element.js")
 
-  const res = await graphql(`
+  const elements = await graphql(`
     query {
       allContentfulElement {
         nodes {
@@ -23,7 +23,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
   `)
 
   // 3) create new pages
-  res.data.allContentfulElement.nodes.forEach(element => {
+  elements.data.allContentfulElement.nodes.forEach(element => {
     createPage({
       component: ElementPage,
       path: `/${element.subcategory.slug}/${element.slug}`,
