@@ -2,16 +2,16 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../../components/layout"
-import Nav from "../../components/nav"
 import SEO from "../../components/seo"
+import Nav from "../../components/nav"
 
-const Patterns = () => {
+const Design = () => {
   const data = useStaticQuery(
     graphql`
       query {
         allContentfulCategory(
           sort: { fields: [order], order: ASC }
-          filter: { section: { slug: { eq: "patterns" } } }
+          filter: { section: { slug: { eq: "design" } } }
         ) {
           nodes {
             id
@@ -26,15 +26,15 @@ const Patterns = () => {
 
   return (
     <Layout>
-      <SEO title="Patterns"></SEO>
+      <SEO title="Design"></SEO>
       <Nav categories={data.allContentfulCategory.nodes} />
       <main>
         <div className="wrapper">
-          <h1>Patterns</h1>
+          <h1>Design</h1>
         </div>
       </main>
     </Layout>
   )
 }
 
-export default Patterns
+export default Design

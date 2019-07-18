@@ -38,37 +38,42 @@ const NavBlock = ({ category }) => {
     <div className="navblock">
       <h3 className="category">{category.title}</h3>
       <ul>
-        {filteredSubcategories.map(subcategory => {
-          return (
-            <li key={subcategory.id}>
-              <Link
-                to={`/${subcategory.slug}/${
-                  data.elements.nodes.filter(
-                    element => element.subcategory.id === subcategory.id
-                  )[0].slug
-                }`}
-              >
-                <h3 className="subcategory">{subcategory.title}</h3>
-              </Link>
-              <ul className="elementList">
-                {data.elements.nodes
-                  .filter(element => element.subcategory.id === subcategory.id)
-                  .map(element => {
-                    return (
-                      <li key={element.id}>
-                        <Link
-                          className="elementLink"
-                          to={`/${subcategory.slug}/${element.slug}`}
-                        >
-                          {element.title}
-                        </Link>
-                      </li>
-                    )
-                  })}
-              </ul>
-            </li>
-          )
-        })}
+        {filteredSubcategories &&
+          filteredSubcategories.map(subcategory => {
+            return (
+              <li key={subcategory.id}>
+                <Link
+                  to={`/${subcategory.slug}/${
+                    data.elements.nodes.filter(
+                      element => element.subcategory.id === subcategory.id
+                    )[0].slug
+                  }`}
+                >
+                  <h3 className="subcategory">{subcategory.title}</h3>
+                </Link>
+                <ul className="elementList">
+                  {data.elements &&
+                    data.elements.nodes
+                      .filter(
+                        element => element.subcategory.id === subcategory.id
+                      )
+                      .map(element => {
+                        return (
+                          <li key={element.id}>
+                            <Link
+                              className="elementLink"
+                              to={`/${subcategory.slug}/${element.slug}`}
+                              activeClassName="active-nav-link"
+                            >
+                              {element.title}
+                            </Link>
+                          </li>
+                        )
+                      })}
+                </ul>
+              </li>
+            )
+          })}
       </ul>
     </div>
   )

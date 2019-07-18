@@ -18,14 +18,19 @@ const Header = () => {
   return (
     <header className={headerStyles.header}>
       <Link to="/">
-        <h1>Campbrain Design System</h1>
+        <h1 style={{ marginLeft: "30px" }}>Campbrain Design System</h1>
       </Link>
       <nav className={headerStyles.nav}>
         <ul>
           {data.allContentfulSection.nodes.map(section => {
             return (
               <li key={section.id}>
-                <Link to={`/${section.slug}`}>{section.title}</Link>
+                <Link
+                  to={`/${section.slug}`}
+                  activeClassName={headerStyles.activeLink}
+                >
+                  {section.title}
+                </Link>
               </li>
             )
           })}

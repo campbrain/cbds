@@ -9,7 +9,7 @@ import Variation from "../components/variation"
 import elementStyles from "./element.module.scss"
 
 export const query = graphql`
-  query($slug: String!) {
+  query($slug: String!, $section: String!) {
     element: contentfulElement(slug: { eq: $slug }) {
       title
       description {
@@ -24,12 +24,16 @@ export const query = graphql`
         title
         id
         codePenId
+        codePenHeight
         description {
           json
         }
       }
     }
-    categories: allContentfulCategory(sort: { fields: [order], order: ASC }) {
+    categories: allContentfulCategory(
+      sort: { fields: [order], order: ASC }
+      filter: { section: { slug: { eq: $section } } }
+    ) {
       nodes {
         id
         title
@@ -59,15 +63,18 @@ class ElementPage extends React.Component {
     const { element, categories, variations } = this.props.data
     return (
       <Layout>
-        <SEO title="Patterns"></SEO>
+        <SEO title={element.title}></SEO>
         <Nav categories={categories.nodes} />
         <main>
-          <div className={elementStyles.wrapper}>
-            <h1>{element.title}</h1>
+          <div className="wrapper">
+            <h1 style={{ marginBottom: "10px" }}>{element.title}</h1>
             <div className={elementStyles.description}>
-              {documentToReactComponents(element.description.json)}
+              {element.description &&
+                documentToReactComponents(element.description.json)}
             </div>
-            <hr style={{ marginBottom: "20px", opacity: ".25" }} />
+            {(element.description || element.title) && (
+              <hr style={{ marginBottom: "20px", opacity: ".25" }} />
+            )}
             {variations.nodes.length > 1 && (
               <select
                 value={this.state.selectedComponent.id}
@@ -75,13 +82,14 @@ class ElementPage extends React.Component {
                 id="variation"
                 onChange={this.handleChange}
               >
-                {variations.nodes.map(variation => {
-                  return (
-                    <option key={variation.id} value={variation.id}>
-                      {variation.title}
-                    </option>
-                  )
-                })}
+                {variations &&
+                  variations.nodes.map(variation => {
+                    return (
+                      <option key={variation.id} value={variation.id}>
+                        {variation.title}
+                      </option>
+                    )
+                  })}
               </select>
             )}
             {this.state.selectedComponent && (
@@ -90,6 +98,7 @@ class ElementPage extends React.Component {
                 title={this.state.selectedComponent.title}
                 description={this.state.selectedComponent.description}
                 codePenId={this.state.selectedComponent.codePenId}
+                codePenHeight={this.state.selectedComponent.codePenHeight}
               />
             )}
           </div>

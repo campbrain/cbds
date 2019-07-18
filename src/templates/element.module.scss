@@ -1,6 +1,7 @@
 .description {
   font-size: 2.5rem;
   margin-bottom: 20px;
+  line-height: 1.25;
 
   a {
     color: grey;
@@ -10,10 +11,4 @@
 
 select {
   margin-bottom: 20px;
-}
-
-.wrapper {
-  width: 75%;
-  margin: 0 auto;
-  max-width: 1000px;
 }

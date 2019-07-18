@@ -32,3 +32,15 @@
 .navblock {
   margin-bottom: 20px;
 }
+
+.active-nav-link {
+  color: green;
+}
+
+.active-nav-link::before {
+  content: "|";
+  width: 2px;
+  height: 10px;
+  background: green;
+  margin-right: 5px;
+}

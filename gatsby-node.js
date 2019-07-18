@@ -11,6 +11,9 @@ module.exports.createPages = async ({ graphql, actions }) => {
           title
           slug
           id
+          section {
+            slug
+          }
           subcategory {
             slug
           }
@@ -27,6 +30,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
       context: {
         slug: element.slug,
         subcategory: element.subcategory.slug,
+        section: element.section.slug,
       },
     })
   })

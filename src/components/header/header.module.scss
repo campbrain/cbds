@@ -19,3 +19,9 @@
 .nav ul {
   display: flex;
 }
+
+.active-link {
+  color: green;
+  font-weight: bold;
+  text-decoration: underline;
+}

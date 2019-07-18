@@ -21,18 +21,19 @@ const data = graphql(
 const NavInnerBlock = ({ subcategory }) => {
   return (
     <ul className="elementList">
-      {data.elements.nodes.map(element => {
-        return (
-          <li key={element.id}>
-            <Link
-              className="elementLink"
-              to={`/${subcategory.slug}/${element.slug}`}
-            >
-              {element.title}
-            </Link>
-          </li>
-        )
-      })}
+      {data.elements &&
+        data.elements.nodes.map(element => {
+          return (
+            <li key={element.id}>
+              <Link
+                className="elementLink"
+                to={`/${subcategory.slug}/${element.slug}`}
+              >
+                {element.title}
+              </Link>
+            </li>
+          )
+        })}
     </ul>
   )
 }
