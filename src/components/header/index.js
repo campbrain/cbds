@@ -17,8 +17,8 @@ const Header = () => {
   `)
   return (
     <header className={headerStyles.header}>
-      <Link to="/">
-        <h1 style={{ marginLeft: "30px" }}>Campbrain Design System</h1>
+      <Link to="/" className={headerStyles.siteTitle}>
+        Campbrain Design System
       </Link>
       <nav className={headerStyles.nav}>
         <ul>

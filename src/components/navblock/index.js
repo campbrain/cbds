@@ -41,7 +41,7 @@ const NavBlock = ({ category }) => {
         {filteredSubcategories &&
           filteredSubcategories.map(subcategory => {
             return (
-              <li key={subcategory.id}>
+              <li key={subcategory.id} style={{ marginBottom: "10px" }}>
                 <Link
                   to={`/${subcategory.slug}/${
                     data.elements.nodes.filter(

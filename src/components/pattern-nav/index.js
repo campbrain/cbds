@@ -18,7 +18,7 @@ const PatternNav = ({ posts }) => {
         <h3 className="category">Team and Process</h3>
         <ul>
           {posts.map(post => (
-            <li key={post.id}>
+            <li key={post.id} className={navStyles.postLink}>
               <a href={`/process/#${post.slug}`}>{post.title}</a>
             </li>
           ))}

@@ -19,7 +19,7 @@ const Nav = ({ categories }) => {
       <nav>
         <ul>
           {categories.map(category => (
-            <li key={category.id}>
+            <li key={category.id} style={{ marginBottom: "30px" }}>
               <NavBlock category={category} />
             </li>
           ))}

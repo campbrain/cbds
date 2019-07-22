@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <main>
+    <main style={{ padding: "50px" }}>
       <h1>Hello</h1>
       <p>Welcome to the CampBrain Design System.</p>
     </main>

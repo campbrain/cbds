@@ -43,10 +43,6 @@ main {
  * `article` contexts in Chrome, Firefox, and Safari.
  */
 
-h1 {
-  font-size: 2em;
-}
-
 /* Grouping content
    ========================================================================== */
 
@@ -369,10 +365,19 @@ html {
 body {
   font-size: 1.6rem;
   font-family: "Helvetica", sans-serif;
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: normal;
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 
 h2 {

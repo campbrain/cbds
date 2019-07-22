@@ -22,9 +22,11 @@
     font-size: 1.5rem;
     padding: 5px 0;
     display: block;
+    opacity: 0.5;
   }
 
   .elementLink:hover {
+    opacity: 1;
     text-decoration: underline;
   }
 }
@@ -33,13 +35,14 @@
   margin-bottom: 20px;
 }
 
-.active-nav-link {
+.elementLink.active-nav-link {
+  opacity: 1;
   color: green;
 }
 
 .active-nav-link::before {
   content: "|";
-  width: 2px;
+  width: 1px;
   height: 10px;
   background: green;
   margin-right: 5px;

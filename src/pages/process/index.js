@@ -52,7 +52,7 @@ const Process = () => {
         <div className="wrapper">
           {data.allContentfulPost.nodes.map((post, i) => (
             <div key={post.id} id={post.slug}>
-              <h1>{post.title}</h1>
+              <h1 style={{ marginBottom: "20px" }}>{post.title}</h1>
               {post.body && documentToReactComponents(post.body.json, options)}
               {i < data.allContentfulPost.nodes.length - 1 && (
                 <hr style={{ margin: "50px 0" }} />
