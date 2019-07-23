@@ -27,6 +27,8 @@
 
 .site-title {
   margin-left: 30px;
+  display: flex;
+  align-items: center;
 
   &:hover {
     text-decoration: none !important;
