@@ -1,17 +1,27 @@
 import React from "react"
+import { Layout } from "antd"
 
-import Layout from "../components/layout"
+import Page from "../components/page"
 
-import SEO from "../components/seo"
+const { Sider, Content } = Layout
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <main style={{ padding: "50px" }}>
-      <h1>Hello</h1>
-      <p>Welcome to the CampBrain Design System.</p>
-    </main>
-  </Layout>
-)
+const IndexPage = () => {
+  return (
+    <Page>
+      <Layout>
+        <Sider
+          theme="light"
+          style={{
+            overflow: "auto",
+            height: "calc(100vh - 64px - 50px)",
+            position: "fixed",
+            left: 0,
+          }}
+        ></Sider>
+        <Content>Content</Content>
+      </Layout>
+    </Page>
+  )
+}
 
 export default IndexPage

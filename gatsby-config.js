@@ -5,6 +5,7 @@ module.exports = {
     author: `CampBrain UX Team`,
   },
   plugins: [
+    "gatsby-plugin-antd",
     {
       resolve: "gatsby-source-contentful",
       options: {
