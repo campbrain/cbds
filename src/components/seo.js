@@ -68,6 +68,13 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
+      script={[
+        {
+          type: "text/javascript",
+          src:
+            "https://platform-api.sharethis.com/js/sharethis.js#property=5defbfe8ee37bc0019bf7413&product=inline-share-buttons&cms=sop",
+        },
+      ]}
     />
   )
 }
