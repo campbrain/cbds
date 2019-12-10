@@ -10,7 +10,6 @@ const IndexPage = () => (
     <main style={{ padding: "50px" }}>
       <h1>Hello</h1>
       <p>Welcome to the CampBrain Design System.</p>
-      <div className="sharethis-inline-share-buttons"></div>
     </main>
   </Layout>
 )
