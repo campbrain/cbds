@@ -30,7 +30,7 @@ const Design = () => {
       <Nav categories={data.allContentfulCategory.nodes} />
       <main>
         <div className="wrapper">
-          <h1>Design TEST</h1>
+          <h1>Design TESTT</h1>
         </div>
       </main>
     </Layout>
